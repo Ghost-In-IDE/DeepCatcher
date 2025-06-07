@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Entrevistas</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="web/dashboard.js"></script>
+</head>
+<body>
+    <!-- Navegación Superior -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="../resources/Logo_DeepCatcher.png" alt="Logo">
+            
+        </div>
+        <div class="nav-user">
+            <button id="logoutBtn" class="logout-btn">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiM4ODcwNTMiLz4KPGNpcmNsZSBjeD0iMzAiIGN5PSIyNCIgcj0iMTAiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMCA0OEMxMCA0MCAyMCAzMiAzMCAzMlM1MCA0MCA1MCA0OCIgZmlsbD0id2hpdGUiLz4KPC9zdmc+" alt="Usuario" id="userAvatar">
+                </div>
+                <div class="user-info">
+                    <h3 id="userName">Usuario</h3>
+                    <p id="userEmail">usuario@ejemplo.com</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-item active" data-page="grabar">📹 Grabar Entrevista</a></li>
+                    <li><a href="#" class="nav-item" data-page="historial">📁 Historial</a></li>
+                    <li><a href="#" class="nav-item" data-page="configuracion">⚙️ Configuración</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <!-- Página de Grabar Entrevista -->
+            <div id="grabar-page" class="page active">
+                <div class="page-header">
+                    <h1>Grabar Nueva Entrevista</h1>
+                    <p>Configura y graba tu entrevista</p>
+                </div>
+
+                <div class="interview-container">
+                    <div class="interview-setup">
+                        <div class="form-group">
+                            <label for="nombreEntrevistado">Nombre del Entrevistado</label>
+                            <input type="text" id="nombreEntrevistado" placeholder="Ingresa el nombre del entrevistado">
+                        </div>
+                    </div>
+
+                    <div class="video-container">
+                        <div class="video-preview">
+                            <video id="videoPreview" autoplay muted></video>
+                            <div id="noCamera" class="no-camera">
+                                <p>📷 Cámara no disponible</p>
+                            </div>
+                        </div>
+
+                        <div class="video-controls">
+                            <button id="startBtn" class="control-btn start">🔴 Iniciar Grabación</button>
+                            <button id="stopBtn" class="control-btn stop" disabled>⏹️ Detener</button>
+                            <button id="pauseBtn" class="control-btn pause" disabled>⏸️ Pausar</button>
+                        </div>
+
+                        <div class="recording-status">
+                            <div id="recordingIndicator" class="recording-indicator">
+                                <span class="red-dot"></span>
+                                <span>GRABANDO</span>
+                                <span id="recordingTime">00:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-list">
+                        <h3>Videos Grabados</h3>
+                        <div id="videosList" class="videos-container">
+                            <p class="no-videos">No hay videos grabados aún</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página de Historial -->
+            <div id="historial-page" class="page">
+                <div class="page-header">
+                    <h1>Historial de Entrevistas</h1>
+                    <p>Revisa todas las entrevistas grabadas</p>
+                </div>
+                <div class="content-placeholder">
+                    <p>Funcionalidad de historial en desarrollo...</p>
+                </div>
+            </div>
+
+            <!-- Página de Configuración -->
+            <div id="configuracion-page" class="page">
+                <div class="page-header">
+                    <h1>Configuración</h1>
+                    <p>Ajusta las preferencias del sistema</p>
+                </div>
+                <div class="content-placeholder">
+                    <p>Funcionalidad de configuración en desarrollo...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
